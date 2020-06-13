@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Covid19 counter</title>
+    <link rel="stylesheet" href="custom.css"></link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+
+        var details = []
+
+
+        $.ajax({
+            method:'GET',
+            url: 'http://covid19-india-adhikansh.herokuapp.com/states',
+            success: function(response){
+                details = response.state
+                buildTable(details)
+                console.log(details)
+            }
+    
+});
+
+        function buildTable(state){
+            var table = document.getElementById('stats')
+            for (var i = 0; i< state.length; i++){
+                var row = `<tr>
+                                <td>${state[i].name}</td>
+                                <td>${state[i].active}</td>
+                                <td>${state[i].cured}</td>
+                                <td>${state[i].death}</td>   
+                                <td>${state[i].total}</td>            
+                            </tr>`
+                            table.innerHTML += row    
+                
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="table-responsive-sm table-responsive-md table-responsive-lg text-nowrap">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">States</th>
+              <th scope="col">Active</th>
+              <th scope="col">Cured</th>
+              <th scope="col">Deaths</th>
+              <th scope="col">Total</th>
+              
+            </tr>
+          </thead>
+          <tbody id="stats">
+            
+          </tbody>
+        </table>
+      
+      </div>
+    
+</body>
+</html>
