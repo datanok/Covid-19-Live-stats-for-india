@@ -15,7 +15,7 @@
 
         $.ajax({
             method:'GET',
-            url: 'http://covid19-india-adhikansh.herokuapp.com/states',
+            url: 'https://covid19-india-adhikansh.herokuapp.com/states',
             success: function(response){
                 details = response.state
                 buildTable(details)
