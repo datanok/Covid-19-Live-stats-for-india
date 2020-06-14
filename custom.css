@@ -1,4 +1,53 @@
-table, th, td, tr{
-	background-color: #222222;
-	color:#fff;
+*{
+
+background-color:#100E17;
 }
+table, th, td, tr {
+	background-color: #202226;
+	color:#fff;
+
+	
+
+}
+table{
+	border-collapse: separate;
+	border-spacing: 15px;
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 2%;
+}
+p{
+	color: white;
+	font-size: 20px;
+}
+
+.flex-container {
+	display: flex;
+	justify-content: center;
+
+}
+.flex-child {
+	justify-content: center;
+	width: 20%;
+	padding: 5px;
+	
+	margin-right: 1%;
+	
+}
+ .act {
+	text-align: center;
+	color:#d32f2f;	
+}
+.con {
+	text-align: center;
+	color:#1e88e5;	
+}
+.cur{
+	text-align: center;
+	color:#43a047;	
+}
+.det {
+	text-align: center;
+	color:#546e7a;	
+}  
