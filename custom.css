@@ -1,54 +1,106 @@
-*{
+body{
 
-background-color:#100E17;
-}
-table, th, td, tr {
-	background-color: #202226;
-	color:#fff;
+    background-color:#100E17;
+    }
+    table, td, tr {
+        background-color: #202226;
+        color:#fff;
+        padding-bottom: 2%;
+        border-radius: 2%; 
+       padding-left: 2%;
+    
+    }
 
-	
+    th{
+        background-color: #383d47;
+        border-radius: 2px;
+        font-size: 1.2em;
+        padding-right: 2%;
+        text-align: center;
 
-}
-table{
-	border-collapse: separate;
-	border-spacing: 15px;
-	width: 60%;
-	margin-left: auto;
-	margin-right: auto;
-	border-radius: 2%;
-        height:50vh;
-}
-p{
-	color: white;
-	font-size: 20px;
-}
+    }
+   
+    table{
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 2%;
 
-.flex-container {
-	display: flex;
-	justify-content: center;
 
+    }
+    p{
+        color: white;
+        font-size: 20px;
+    }
+    
+    .flex-container {
+        display: flex;
+        justify-content: center;
+    
+    }
+    .flex-child {
+        justify-content: center;
+        width: 20%;
+        padding: 5px;
+        
+        margin-right: 1%;
+        
+    }
+     .act {
+        text-align: center;
+        color:#d32f2f;	
+    }
+    .con {
+        text-align: center;
+        color:#1e88e5;	
+    }
+    .cur{
+        text-align: center;
+        color:#43a047;	
+    }
+    .det {
+        text-align: center;
+        color:#546e7a;	
+    }  
+    .social-media{
+        display: flex;
+        justify-content: center;
+        margin: 5% 0%;
+    }
+
+   .social-media a{
+
+       display: inline-flex;
+       color: #fff;
+       justify-content: center;
+       border-radius: 50%;
+       align-items: center;
+       text-decoration: none;
+       width: 50px;
+       height: 50px;
+       margin-right: 3%;
+
+   }
+   .social-media a .fa{
+      font-size: 2rem;
+        margin-right: 5%;
+
+   }
+   .social-media .git:hover {
+       background-color: #fff;
+       color: #000;
+   }
+   .social-media .ig:hover {
+    background-color: #fff;
+    color: #fb3958;
 }
-.flex-child {
-	justify-content: center;
-	width: 20%;
-	padding: 5px;
-	
-	margin-right: 1%;
-	
+.social-media .tw:hover {
+    background-color: #fff;
+    color: #1DA1F2;;
 }
- .act {
-	text-align: center;
-	color:#d32f2f;	
+.social-media .de:hover {
+    background-color: #fff;
+    color: #000;
 }
-.con {
-	text-align: center;
-	color:#1e88e5;	
-}
-.cur{
-	text-align: center;
-	color:#43a047;	
-}
-.det {
-	text-align: center;
-	color:#546e7a;	
-}  
+   
+  
