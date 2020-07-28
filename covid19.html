@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Covid19 counter</title>
-    
-
+    <title>Covid-19 Live Stats for India</title>
     
     <link rel="stylesheet" href="custom.css"></link>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -12,74 +10,31 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://kit.fontawesome.com/bb72f35c65.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="script.js"></script>
     
-    
-    <script>
-
-        var details = []
-        
-
-        $.ajax({
-            method:'GET',
-            url: 'https://api.covid19india.org/data.json',
-            success: function(response){
-               details = response.statewise
-              buildTable(details)
-              totalStats(details)
-               console.log(details)
-               
-               
-            
-            }
-    
-});
-
-         function buildTable(state){
-            var table = document.getElementById('stats')
-            for (var i = 1; i< state.length; i++){
-              
-                var row = `<tr>
-                                <td>${state[i].state}</td>
-                                <td>${state[i].active}</td>
-                                <td>${state[i].confirmed}</td>
-                                <td>${state[i].recovered}</td>   
-                                <td>${state[i].deaths}</td>    
-                                      
-                            </tr>`
-                            table.innerHTML += row    
-                
-            }
-        }   
-        function totalStats(state){
-        
-          $('#activeCases').text(`${state[0].active}`)
-          $('#confirmedCases').text(`${state[0].confirmed}`)
-          $('#curedCases').text(`${state[0].recovered}`)
-          $('#deaths').text(`${state[0].deaths}`)
-
-        }
-        
-        
-    </script>
 </head>
 <body>
   <div class="Total flex-container">
-  <div class="flex-child act">
-    <h6>Active Cases</h6>
-    <p id="activeCases"></p>
-  </div>
-  <div class="flex-child con">
-    <h6>Confirmed Cases</h6>
-    <p id="confirmedCases"></p>
-  </div>
-  <div class="flex-child cur">
-    <h6>Cured</h6>
-    <p id="curedCases"></p>
-  </div>
-  <div class="flex-child det">
-    <h6>Deaths</h6>
-    <p id="deaths"></p>
-  </div>
+    
+        <div class="flex-child act">
+              <h6>Active Cases</h6>
+              <p id="activeCases"></p>
+        </div>
+
+        <div class="flex-child con">
+              <h6>Confirmed Cases</h6>
+              <p id="confirmedCases"></p>
+        </div>
+
+        <div class="flex-child cur">
+              <h6>Cured</h6>
+              <p id="curedCases"></p>
+        </div>
+
+        <div class="flex-child det">
+              <h6>Deaths</h6>
+              <p id="deaths"></p>
+        </div>
   </div>
 
     <div class="tables">
@@ -92,7 +47,6 @@
               <th scope="col" >confirmed</th>
               <th scope="col" >Cured</th>
               <th scope="col" >Deaths</th>
-              
             </tr>
           </thead>
           <tbody id="stats">
